@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+._*
+
+# Java build output
+*.class
+*.jar
+bin/
+out/
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
