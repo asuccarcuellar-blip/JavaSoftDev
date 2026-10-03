@@ -1,11 +1,13 @@
+package Ch9FirstHalf;
 // Andres Succar
 //p.334
 
-public class PartyWithConstructor {
+public class PartyWithConstructor2 {
     private int guests;
-    public PartyWithConstructor()
+    public PartyWithConstructor2(int numGuests)
     {
-        System.out.println(  "Creating a Party")
+        guests = numGuests;
+        
     }
 
     

@@ -1,9 +1,11 @@
+package Ch9FirstHalf;
 // Andres Succar
 // p.333
 
-public class DinnerParty extends Party
+public class DinnerPartyWithConstructor extends PartyWithConstructor
 {
     private int dinnerChoice;
+
     public int getDinnerChoice()
     {
         return dinnerChoice;
@@ -11,5 +13,9 @@ public class DinnerParty extends Party
     public void setDinnerChoice(int choice)
     {
         dinnerChoice = choice;
+    }
+    @Override public void displayInvitation()
+    {
+        System.out.println("Please come to my dinner party!");
     }
 }
