@@ -3,7 +3,7 @@
  * 
  * LeadMember.java
  * Class for the band Leader. 
- * They charge fixed fee, a percentage AND a bonus per show.
+ * They charge fixed fee, a percentage and a fixed bonus.
  * It inherits (extends) from Member
  */
 

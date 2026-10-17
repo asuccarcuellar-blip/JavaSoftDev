@@ -3,13 +3,14 @@
  * Member.java
  * Program that creates a class for a normal member of the band. 
  * This kind of member charges a 
- * a percentage of the money that it is left after cotsts and fixed expenses.
+ * a percentage of the money that it is left after costs and fixed expenses.
  * It is a
  * parent class for LeadMember and SessionMember.
  */ 
 
 public class Member 
 {
+    private static int count = 0;
     private String name;
     private double percent;
     
@@ -17,7 +18,18 @@ public class Member
     {
         setName(name);
         setPercent(percent);
+        count++;
     }
+    public Member(String name) throws BandException
+    {
+        this(name,0.0);
+    }
+
+    public static int getCount()
+    {
+        return count;
+    }
+
     public String getName()
     {
         return name;
@@ -26,6 +38,7 @@ public class Member
     {
         return percent;
     }
+
     public void setName(String name) throws BandException
     {
         if(name == null || name.trim().isEmpty())

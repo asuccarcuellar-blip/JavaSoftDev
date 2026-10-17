@@ -31,7 +31,7 @@ public class SessionMember extends Member
     @Override 
     public String getType()
     {
-        return "SSSION";
+        return "SESSION";
     }
 
     @Override 
