@@ -5,7 +5,7 @@ public class EvenEntryLoop {
     public static void main(String[] args) 
     {
 
-        int number = 5;
+        int number = 54;
 
         while(number != 999)    
             if(number % 2 == 0)
