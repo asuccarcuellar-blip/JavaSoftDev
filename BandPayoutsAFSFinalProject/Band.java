@@ -23,10 +23,29 @@ public class Band
         members.add(newMember);
     }
 
+    public void removeMember(int index) throws BandException
+    {
+        if (index < 0 || index >= members.size())
+        {
+            throw new BandException("Select a member first");
+        }
+        members.remove(index);
+    }
+
     public void addGig(Gig gig)
     {
         gigs.add(gig);
     }
+
+    public void removeGig(int index) throws BandException
+    {
+        if (index < 0 || index >= gigs.size())
+        {
+            throw new BandException("Select a gig first");
+        }
+        gigs.remove(index);
+    }
+
     public ArrayList<Member> getMembers()
     {
         return members;

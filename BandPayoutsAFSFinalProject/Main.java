@@ -10,7 +10,18 @@ import java.util.Scanner;
 
 public class Main
 {
-    static final String FILE_NAME = "band.csv";
+    static final String FOLDER_NAME = "BandPayoutsAFSFinalProject";
+    static final File DATA_FILE = findDataFile();
+
+    static File findDataFile()
+    {
+        File folder = new File(FOLDER_NAME);
+        if (folder.isDirectory())
+        {
+            return new File(folder, "band.csv");
+        }
+        return new File("band.csv");
+    }
 
     public static void main(String[] args)
     {
@@ -134,7 +145,7 @@ public class Main
     // bonus (LEAD), fee (SESSION) or 0 (CORE).
     static void save(Band band)
     {
-        try (PrintWriter out = new PrintWriter(new FileWriter(FILE_NAME)))
+        try (PrintWriter out = new PrintWriter(new FileWriter(DATA_FILE)))
         {
             for (Member m : band.getMembers())
             {
@@ -146,7 +157,7 @@ public class Main
                 out.println("GIG," + g.getDescription() + ","
                         + g.getIncome() + "," + g.getExpenses());
             }
-            System.out.println("Saved to " + FILE_NAME);
+            System.out.println("Saved to " + DATA_FILE.getPath());
         }
         catch (IOException e)
         {
@@ -158,7 +169,7 @@ public class Main
     static Band load(Band current)
     {
         Band newBand = new Band();
-        try (Scanner file = new Scanner(new File(FILE_NAME)))
+        try (Scanner file = new Scanner(DATA_FILE))
         {
             while (file.hasNextLine())
             {
@@ -186,12 +197,12 @@ public class Main
                             Double.parseDouble(p[3])));
                 }
             }
-            System.out.println("Loaded from " + FILE_NAME);
+            System.out.println("Loaded from " + DATA_FILE.getPath());
             return newBand;
         }
         catch (FileNotFoundException e)
         {
-            System.out.println("File not found: " + FILE_NAME);
+            System.out.println("File not found: " + DATA_FILE.getPath());
         }
         catch (Exception e)
         {
